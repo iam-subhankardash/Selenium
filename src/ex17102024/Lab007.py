@@ -27,4 +27,4 @@ def test_selenium_partial_link_text():
     anchor_tag_link = driver.find_element(By.PARTIAL_LINK_TEXT, "free trial")
     anchor_tag_link.click()
     assert driver.current_url == "https://vwo.com/free-trial/?utm_medium=website&utm_source=login-page&utm_campaign=mof_eg_loginpage"
-    
+
