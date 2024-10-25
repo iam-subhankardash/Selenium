@@ -1,3 +1,4 @@
+import time
 from selenium import webdriver
 import pytest
 import allure
@@ -15,4 +16,7 @@ def test_verify_select():
 
     select_html_tag = driver.find_element(By.XPATH, "//select[@id='dropdown']")
     select = Select(select_html_tag)
-    select.select_by_visible_text("Option 2")
+    # For multi select: both of the below options can be executed.
+    # select.select_by_visible_text("Option 2")
+    select.select_by_index(1)
+    time.sleep(5)
