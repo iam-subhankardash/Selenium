@@ -4,9 +4,9 @@ import pytest
 import allure
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
-pytest.mark.registration
 
 
+@pytest.mark.registration
 @allure.title("Registration Page Automation")
 @allure.description("Automation for the Registration Page of the AwesomeQA.com/UI")
 def test_registration_page_automation():
@@ -20,7 +20,7 @@ def test_registration_page_automation():
     last_name_input_box.send_keys("Dash")
     time.sleep(2)
     email_input_box = driver.find_element(By.XPATH, "//input[@id='input-email']")
-    email_input_box.send_keys("isubhankar1@gmail.com")
+    email_input_box.send_keys("isubhankar2@gmail.com")
     time.sleep(2)
     telephone_input_box = driver.find_element(By.XPATH, "//input[@id='input-telephone']")
     telephone_input_box.send_keys("1234567890")
@@ -40,4 +40,3 @@ def test_registration_page_automation():
     assert driver.current_url == "https://awesomeqa.com/ui/index.php?route=account/success"
     source_page = driver.page_source
     assert "Your Account Has Been Created!" in source_page
-
